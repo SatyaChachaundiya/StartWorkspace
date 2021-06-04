@@ -10,6 +10,8 @@ import { EventDetailsComponent } from './events/event-details/event-details.comp
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { CreateEventComponent } from './events/create-event.components'
+import { Error404Component } from './error/404.component';
+import { EventRouteActivator } from './events/event-details/event-route-activator.sevice'
 
 @NgModule({
   declarations: [
@@ -18,13 +20,28 @@ import { CreateEventComponent } from './events/create-event.components'
     EventsListComponent,
     EventDetailsComponent,
     NavBarComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    Error404Component
     ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers:[EventService],
+  providers:[
+    EventService, 
+    EventRouteActivator,
+    {
+      provide: 'canDeactivateCreateEvent',
+      useValue: checkDirtyState
+    }
+  ],
   bootstrap: [EventsAppComponent]
 })
+
 export class AppModule { }
+
+export function checkDirtyState(component: CreateEventComponent){
+  if(component.isDirty)
+    return window.confirm('you haven\'t saved your work yet')
+  return true
+}

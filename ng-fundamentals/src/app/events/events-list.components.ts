@@ -16,7 +16,9 @@ import { ActivatedRoute } from '@angular/router';
         </div>
     `
 })
+
 export class EventsListComponent{
+    
     events:any[]
 
     constructor(private eventService: EventService, private route:ActivatedRoute){

@@ -3,16 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { NavBarComponent } from './nav/nav.component'
 import { EventsAppComponent } from './app.component';
-import { EventsListComponent } from './events/events-list.components';
-import { EventsThumbnailComponent } from './events/events-thumbnail.components';
-import { EventService } from './events/shared/event.service';
-import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
-import { CreateEventComponent } from './events/create-event.components'
 import { Error404Component } from './error/404.component';
-import { EventRouteActivator } from './events/event-details/event-route-activator.sevice'
-import { EventListResolver } from './events/event-details/events-list-resolver.service'
+
+import { 
+  EventDetailsComponent,
+  EventsListComponent,
+  CreateEventComponent,
+  EventRouteActivator,
+  EventListResolver,
+  EventsThumbnailComponent,
+  EventService
+} from './events/index'; // barrels (making index files at directory levels and exporting every file of the directory there)
+
 
 @NgModule({
   declarations: [

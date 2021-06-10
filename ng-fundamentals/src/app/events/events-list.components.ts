@@ -2,6 +2,7 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { Component } from '@angular/core';
 import { EventService } from './shared/event.service';
 import { ActivatedRoute } from '@angular/router';
+import { Ievent } from './shared/index';
 
 
 @Component({
@@ -19,7 +20,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class EventsListComponent{
     
-    events:any[]
+    events:Ievent[]
 
     constructor(private eventService: EventService, private route:ActivatedRoute){
         

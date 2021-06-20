@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core'
 @Injectable()
 export class AuthService{
     currentUser:IUser
-    logiUser(userName:string,password:string){
+    loginUser(userName:string,password:string){
         //this, should fetch info about user from server, here its hardcoded
         this.currentUser={
             id:1,
@@ -15,5 +15,10 @@ export class AuthService{
     }
     isAuthenticated(){
         return !!this.currentUser;
+    }
+
+    updateCurrentuser(firstName:string, lastName:string){
+        this.currentUser.firstName=firstName
+        this.currentUser.lastName=lastName
     }
 }

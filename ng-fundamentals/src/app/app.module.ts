@@ -17,6 +17,7 @@ import {
   EventService
 } from './events/index'; // barrels (making index files at directory levels and exporting every file of the directory there)
 import { AuthService } from './user/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,6 +32,8 @@ import { AuthService } from './user/auth.service';
     ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers:[

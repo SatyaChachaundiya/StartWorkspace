@@ -19,8 +19,8 @@ import { AuthService } from './auth.service'
 export class ProfileComponent implements OnInit{
 
   profileForm:FormGroup
-  firstName:FormControl
-  lastName:FormControl
+  private firstName:FormControl
+  private lastName:FormControl
 
   constructor(private authser:AuthService, private route:Router){
 

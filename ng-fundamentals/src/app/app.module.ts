@@ -6,6 +6,7 @@ import { EventsAppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { Error404Component } from './error/404.component';
+import { CollapsibleWellComponent } from './common/collapsible-well.component'
 
 import { 
   EventDetailsComponent,
@@ -32,7 +33,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateEventComponent,
     Error404Component,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleWellComponent
+
     ],
   imports: [
     BrowserModule,

@@ -6,9 +6,9 @@ import { Ievent } from './shared/index';
     template: `
     <div [routerLink]="['/events',event.id]" class="well hoverwell thumbnail">
         <h2>{{event.name}}</h2>
-        <div>Date: {{event.date}}</div>
+        <div>Date: {{event.date | date:'MM/dd/y'}}</div>
         <div>Time: {{event.time}}</div>
-        <div>Price: \${{event.price}}</div>
+        <div>Price: {{event.price | currency:'USD'}}</div>
         <div>
             <span>Location: {{event.location.address}}</span> 
             <span>&nbsp;</span> 

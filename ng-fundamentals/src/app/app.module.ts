@@ -17,7 +17,8 @@ import {
   EventsThumbnailComponent,
   EventService,
   CreateSessionComponent,
-  SessionListComponent
+  SessionListComponent,
+  durationPipe
 } from './events/index'; // barrels (making index files at directory levels and exporting every file of the directory there)
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -34,8 +35,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Error404Component,
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleWellComponent
-
+    CollapsibleWellComponent,
+    durationPipe
     ],
   imports: [
     BrowserModule,

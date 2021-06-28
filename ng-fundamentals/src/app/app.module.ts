@@ -22,7 +22,9 @@ import {
 } from './events/index'; // barrels (making index files at directory levels and exporting every file of the directory there)
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TOASTR_TOKEN, Toastr } from './common/toastr.service'
 
+let toastr : Toastr = window['toastr']
 
 @NgModule({
   declarations: [
@@ -52,6 +54,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
+    },
+    {
+      provide: TOASTR_TOKEN,
+      useValue: toastr
     }
   ],
   bootstrap: [EventsAppComponent]

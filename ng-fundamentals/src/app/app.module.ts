@@ -6,7 +6,7 @@ import { EventsAppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { Error404Component } from './error/404.component';
-import { CollapsibleWellComponent } from './common/collapsible-well.component'
+import { CollapsibleWellComponent, TOASTR_TOKEN, Toastr, JQ_TOKEN } from './common/index'
 
 import { 
   EventDetailsComponent,
@@ -22,9 +22,9 @@ import {
 } from './events/index'; // barrels (making index files at directory levels and exporting every file of the directory there)
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TOASTR_TOKEN, Toastr } from './common/toastr.service'
 
 let toastr : Toastr = window['toastr']
+let jQuery = window['$']
 
 @NgModule({
   declarations: [

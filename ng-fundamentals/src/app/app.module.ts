@@ -6,7 +6,7 @@ import { EventsAppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { Error404Component } from './error/404.component';
-import { CollapsibleWellComponent, TOASTR_TOKEN, Toastr, JQ_TOKEN } from './common/index'
+import { CollapsibleWellComponent, TOASTR_TOKEN, Toastr, JQ_TOKEN, SimpleModelComponent, ModalTriggerDirective } from './common/index'
 
 import { 
   EventDetailsComponent,
@@ -38,7 +38,9 @@ let jQuery = window['$']
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    durationPipe
+    durationPipe,
+    SimpleModelComponent,
+    ModalTriggerDirective
     ],
   imports: [
     BrowserModule,
@@ -51,13 +53,11 @@ let jQuery = window['$']
     EventRouteActivator,
     EventListResolver,
     AuthService,
+    { provide: TOASTR_TOKEN, useValue: toastr },
+    { provide: JQ_TOKEN, useValue: jQuery },
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
-    },
-    {
-      provide: TOASTR_TOKEN,
-      useValue: toastr
     }
   ],
   bootstrap: [EventsAppComponent]

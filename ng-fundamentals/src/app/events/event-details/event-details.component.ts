@@ -24,8 +24,10 @@ export class EventDetailsComponent {
     ngOnInit(){
         this.route.params.forEach((params: Params)=>{
             this.event = this.eventService.getEvent(+params['id'])
+            // console.log(this.event = this.eventService.getEvent(+params['id']));
             this.addmode = false
         })
+        
     }
 
     addSession(){
